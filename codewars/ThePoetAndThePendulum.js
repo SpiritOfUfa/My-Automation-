@@ -1,13 +1,10 @@
-function pendulum(values) {
-  let min = Math.min(...values);
-   values.splice(values.indexOf(min) , 1);
-   values.sort((a,b) => a - b );
-   let rigthArr = values.filter((el,i)=> i % 2 === 0);
-   let leftArr = values.filter((el,i) => i % 2 !== 0).reverse()
-   return [...leftArr , min, ...rigthArr]
- }
-
-
- function minValue(values){
-  return +values.filter((el,i,arr) => i === arr.lastIndexOf(el)).sort((a,b) => a - b ).join('');
+function countSalutes(hallway) {
+  let s = 0;
+  let arr = hallway.split('');
+  for(let i = 0; i<arr.length; i++){
+   if(arr[i] === '>') {
+     s += arr.filter((el,j) => el === '<' && j > i).length;
+   }
+  }
+  return 2 * s;
 }
