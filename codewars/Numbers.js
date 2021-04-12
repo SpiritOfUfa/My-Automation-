@@ -56,8 +56,6 @@ class Numbers{
     mynum.toNumber();
     console.log(mynum.floor);
   }
-   
-  
   class String{
     constructor(a){
       this.x = a;
@@ -114,7 +112,19 @@ class Numbers{
      this.x = a ;
     }
   }
-  
+  let str = new String('I Love New York ')
   console.log(str.x);
   console.log(str.length);
   console.log(str.index);
+  console.log(str.indexOf('N'));
+  console.log(str.includes());
+    console.log(str.endsWith());
+  console.log(str.toLowerCase);
+  console.log(str.toUpperCase);
+  console.log(str.slice(0, 6));
+  console.log(str.substring(7));
+  console.log(str.substr(10));
+   console.log(str.repeat(5));
+  console.log(str.trim);
+  
+  console.log(str.x);
