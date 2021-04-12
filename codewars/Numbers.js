@@ -2,13 +2,14 @@ class Numbers{
     constructor(a){
       this.x = a;
     }
-    set value123(a){
+    set value345(a){
       this.x = a;
     }
     get abs(){
       return Math.abs(this.x);
     }
     get reverse(){
+        console.log('abc');
       return -this.x;
     }
     get round(){
@@ -55,7 +56,6 @@ class Numbers{
     mynum.toNumber();
     console.log(mynum.floor);
   }
-
   class String{
     constructor(a){
       this.x = a;
