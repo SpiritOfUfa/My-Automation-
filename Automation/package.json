@@ -11,7 +11,9 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "@wdio/cli": "^7.5.1",
-    "@wdio/sync": "^7.5.1"
+    "@wdio/sync": "^7.5.1",
+    "chai": "^4.3.4",
+    "expect": "^26.6.2"
   },
   "browserslist": [
     "last 1 Chrome version"
