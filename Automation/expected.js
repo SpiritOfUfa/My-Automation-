@@ -16,5 +16,18 @@ forms : 'Forms',
 alerts : 'Alerts, Frame & Windows',
 widgets : 'Widgets',
 interections : 'Interactions',
-books : 'Book Store Application'
+books : 'Book Store Application',
+textBoxLabels : {
+    fullName : 'Full Name',
+    email : 'Email',
+    currentAdress : 'Current Address',
+    permAdress : 'Permanent Address'
+},
+textBoxPlaceholders : {
+    fullName : 'Full Name',
+    email : 'name@example.com',
+    currentAdress : 'Current Address',
+    permAdress : 'Permanent Address'
+}
+
 }
