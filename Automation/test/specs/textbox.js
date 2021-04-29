@@ -1,4 +1,4 @@
-const expect = require("chai").expect;
+const expect = require("chai").expect; // expect переменная которая хранит свойство .expect библиотеки 'chai'/ можно менять название
 import { URLs, labels } from "../../expected";
 import TextBox from "../../pageobjects/textbox";
 import { inputTextBox } from "../../input";

@@ -1,24 +1,24 @@
 const expect = require("chai").expect;
 import {URLs,labels} from "../../expected";  // '../../expected' таким образом мы находим нужные обьекты для импортирования
 
-describe("Main page test suite", () => {
-  it("Validate the title of the main page", () => {
+describe("Main page test suite", () => { // набор тестов
+  it("Validate the title of the main page", () => { //тест кейс
     browser.url("https://demoqa.com/");
     const actualTitle = browser.getTitle();
     expect(actualTitle).to.equal(labels.title);
   });
   it("Validate the number of tiles on the main page", () => {
-    const elements = $$("div.category-cards > div");
+    const elements = $$("div.category-cards > div"); //$$ - всегда возвращает массив элементов
     expect(elements.length).to.equal(6);
   });
   it('Validate the text of footer', () => {
-    const span = $("#app > footer > span");
+    const span = $("#app > footer > span"); // $ возвращает один элемент
     const actualText = span.getText();
     expect(actualText).to.equal(labels.footer);
   });
   it('Validate the names of tiles', () => {
-    const [actualElements,actualForms,actualAlerts,actualWidgets,
-           actualInteractions,actualBookstore] = $$('h5').map(el => el.getText())
+    const [actualElements,actualForms,actualAlerts,actualWidgets, //деструктуризация массива
+           actualInteractions,actualBookstore] = $$('h5').map(el => el.getText()) //массив строк
     expect(actualElements).to.equal(labels.elements);
     expect(actualForms).to.equal(labels.forms);
     expect(actualAlerts).to.equal(labels.alerts);
