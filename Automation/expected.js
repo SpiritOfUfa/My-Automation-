@@ -33,7 +33,7 @@ textBoxPlaceholders : {
     currentAdress : 'Current Address',
     permAdress : 'Permanent Address'
 },
-practiceFormLabels : {
+    FormLabels : {
     MainHeader : 'Forms',
     tileLabel : "Practice Form",
     PracticeFormName : 'Name',

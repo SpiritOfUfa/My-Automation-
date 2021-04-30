@@ -31,7 +31,9 @@ exports.config = {
         './test/specs/**/MainPage.js',
         './test/specs/**/elements.js',
         './test/specs/**/textbox.js',
-        './test/specs/**/form.js'
+        './test/specs/**/checkBox.js',
+
+        // './test/specs/**/form.js'
 
 
     ],

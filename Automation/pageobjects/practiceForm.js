@@ -1,9 +1,19 @@
 class practiceForm {
-    get labelPracticeTile(){
-        return $$(".menu-list"[1]);
+    get formTileOnTheMainPage(){
+        return $$('.category-cards > div')[1];
+    }
+    get PracticeFormTile(){
+        return $$("#item-0")[1];
+    }
+    get LabelOfPracticeTile(){
+        return $("#item-0 > span")[1];
+
     }
   get labelTitle() {
       return $(".main-header").getText();
+  }
+  get mainHeaderLabel(){
+      return $(".main-header").getText()
   }
   get labelName() {
     return $("label#userName-label").getText();
@@ -21,13 +31,13 @@ class practiceForm {
     return $("#dateOfBirth-label").getText();
 }
 get labelSubjects(){
-    return $("#subjects-label"[0]).getText();
+    return $("#subjects-label").getText();
 }
 get labelHobbies(){
-    return $("label#subjects-label"[1]).getText();
+    return $("label#subjects-label")[1];
 }
 get labelPictures(){
-    return $("label#userNumber-label"[2]).getText();
+    return $("#subjects-label")[2];
 }
 get labelCurrentAddress(){
     return $("#currentAddress-label").getText();
