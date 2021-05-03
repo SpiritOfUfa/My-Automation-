@@ -7,7 +7,6 @@ class practiceForm {
     }
     get LabelOfPracticeTile(){
         return $("#item-0 > span")[1];
-
     }
   get labelTitle() {
       return $(".main-header").getText();
@@ -34,10 +33,25 @@ get labelSubjects(){
     return $("#subjects-label").getText();
 }
 get labelHobbies(){
-    return $("label#subjects-label")[1];
+    return $(`//*[text() = '${'Hobbies'}']`)
+}
+get HobbiesSports(){
+    // return $(`//*[text() = '${'Sports'}']`)
+    return $('#hobbies-checkbox-1 + label')
+}
+get HobbiesReading(){
+    // return $(`//*[text() = '${'Reading'}']`)
+    return  $('#hobbies-checkbox-2 + label')
+}
+get HobbiesMusic(){
+    // return $(`//*[text() = '${'Music'}']`)
+    return  $('#hobbies-checkbox-3 + label')
+}
+get CheckedElements(){
+    return $$(":checked + label").map(el => el.getText())
 }
 get labelPictures(){
-    return $("#subjects-label")[2];
+    return  $(`//*[text() = '${'Picture'}']`);
 }
 get labelCurrentAddress(){
     return $("#currentAddress-label").getText();

@@ -21,16 +21,23 @@ describe('Forms page test suit', () => {
         expect(practiceForm.labelMobile).to.equal(labels.FormLabels.PracticeFormMobile);
         expect(practiceForm.labelDateOfBirth).to.equal(labels.FormLabels.PracticeFormBday);
         expect(practiceForm.labelSubjects).to.equal(labels.FormLabels.PracticeFormSubj);
-        // expect(practiceForm.labelHobbies).to.equal(labels.practiceFormLabels.PracticeFormHobbies);
-        // expect(practiceForm.labelPictures).to.equal(labels.practiceFormLabels.PracticeFormPicture);
+        expect(practiceForm.labelHobbies.getText()).to.equal(labels.FormLabels.PracticeFormHobbies);
+        expect(practiceForm.labelPictures.getText()).to.equal(labels.FormLabels.PracticeFormPicture);
         expect(practiceForm.labelCurrentAddress).to.equal(labels.FormLabels.PracticeFormCurAddress);
         expect(practiceForm.labelStateCity).to.equal(labels.FormLabels.PracticeFormState);
-
-
-
-
-
-
+        expect(practiceForm.HobbiesMusic.getText()).to.equal(labels.FormLabels.HobbiesMusic);       
+        expect(practiceForm.HobbiesReading.getText()).to.equal(labels.FormLabels.HobbiesReading);
+        expect(practiceForm.HobbiesSports.getText()).to.equal(labels.FormLabels.HobbiesSports);
+        // expect(practiceForm.ClicksElements.getText()).to.equal(labels.FormLabels.HobbiesMusic)
     });
+    it('Make clicks on Hobbies checkboxes -> Sports/Music/Reading and validate the clicks', () => {
+        practiceForm.HobbiesSports.click();
+        browser.pause(2000);
+        practiceForm.HobbiesReading.click();
+        browser.pause(2000);
+        practiceForm.HobbiesMusic.click();
+        browser.pause(2000);
+        expect(practiceForm.CheckedElements).to.eql(['Sports','Reading','Music'])
+        });
     
 });

@@ -43,6 +43,9 @@ textBoxPlaceholders : {
     PracticeFormBday : 'Date of Birth',
     PracticeFormSubj : 'Subjects',
     PracticeFormHobbies : 'Hobbies',
+    HobbiesSports : 'Sports',
+    HobbiesReading : 'Reading',
+    HobbiesMusic : 'Music',
     PracticeFormPicture : 'Picture',
     PracticeFormCurAddress : 'Current Address',
     PracticeFormState : 'State and City'
