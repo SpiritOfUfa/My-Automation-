@@ -37,10 +37,13 @@ describe('Forms page test suit', () => {
         }
         practiceForm.HobbiesSports.click();
         browser.pause(2000);
+        expect(practiceForm.HobbiesSports.isEnabled()).to.be.true;
         practiceForm.HobbiesReading.click();
         browser.pause(2000);
+        expect(practiceForm.HobbiesReading.isEnabled()).to.be.true;
         practiceForm.HobbiesMusic.click();
         browser.pause(2000);
+        expect(practiceForm.HobbiesMusic.isEnabled()).to.be.true;
         expect(practiceForm.CheckedElements).to.eql(['Other','Sports','Reading','Music'])
         });
         

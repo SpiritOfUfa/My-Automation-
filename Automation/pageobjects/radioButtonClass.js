@@ -1,12 +1,12 @@
 class RadioButton {
   get yes() {
-    return $('label[for = "yesRadio"]'); //ищем такой элемент label(можно назвать и по другому) у которого атрибут for = 'yesRadio'
+    return $("#yesRadio"); //ищем такой элемент label(можно назвать и по другому) у которого атрибут for = 'yesRadio'
   }
   get no() {
-    return $('label[for = "noRadio"]');
+    return $("#noRadio");
   }
   get impressive() {
-    return $('label[for = "impressiveRadio"]');
+    return $("#impressiveRadio");
   }
   get radioButtons(){
       return [this.yes,this.impressive,this.no]

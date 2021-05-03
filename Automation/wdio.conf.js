@@ -34,6 +34,10 @@ exports.config = {
         './test/specs/**/checkBox.js',
         './test/specs/**/radioButton.js',
 
+        // './test/specs/**/form.js',
+
+        // './test/specs/**/radioButton.js',
+
 
         // './test/specs/**/form.js'
 
