@@ -9,7 +9,8 @@ export const URLs = {   //Записываем ожидаемые адресса
  textBox : 'https://demoqa.com/text-box',
  practiceForm : 'https://demoqa.com/automation-practice-form',
  mainPage : 'https://demoqa.com',
- checkbox : 'https://demoqa.com/checkbox'
+ checkbox : 'https://demoqa.com/checkbox',
+ radioButton : "https://demoqa.com/radio-button"
 }
 
 export const labels = { //ожидаемые названия

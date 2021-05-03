@@ -1,6 +1,6 @@
 const expect = require("chai").expect;
 import {URLs,labels} from "../../expected" ; 
-import practiceForm, {PracticeForm} from "../../pageobjects/practiceForm";
+import practiceForm, {PracticeForm} from "../../pageobjects/practiceFormClass";
 
 describe('Forms page test suit', () => {
     it('Validate the title on the Forms page', () => {
@@ -30,14 +30,18 @@ describe('Forms page test suit', () => {
         expect(practiceForm.HobbiesSports.getText()).to.equal(labels.FormLabels.HobbiesSports);
         // expect(practiceForm.ClicksElements.getText()).to.equal(labels.FormLabels.HobbiesMusic)
     });
-    it('Make clicks on Hobbies checkboxes -> Sports/Music/Reading and validate the clicks', () => {
+    it('Make clicks on Genders and Hobbies checkboxes and validate the clicks', () => {
+        for (let i = 0 ; i <= 2; i++){
+            practiceForm.GendersButtons[i].click();
+            browser.pause(2000);
+        }
         practiceForm.HobbiesSports.click();
         browser.pause(2000);
         practiceForm.HobbiesReading.click();
         browser.pause(2000);
         practiceForm.HobbiesMusic.click();
         browser.pause(2000);
-        expect(practiceForm.CheckedElements).to.eql(['Sports','Reading','Music'])
+        expect(practiceForm.CheckedElements).to.eql(['Other','Sports','Reading','Music'])
         });
-    
+        
 });
