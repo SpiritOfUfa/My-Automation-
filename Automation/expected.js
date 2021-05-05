@@ -10,7 +10,8 @@ export const URLs = {   //Записываем ожидаемые адресса
  practiceForm : 'https://demoqa.com/automation-practice-form',
  mainPage : 'https://demoqa.com',
  checkbox : 'https://demoqa.com/checkbox',
- radioButton : "https://demoqa.com/radio-button"
+ radioButton : 'https://demoqa.com/radio-button',
+ webTable : 'https://demoqa.com/webtables'
 }
 
 export const labels = { //ожидаемые названия
