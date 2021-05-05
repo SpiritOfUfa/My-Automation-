@@ -34,7 +34,7 @@ textBoxPlaceholders : {
     currentAdress : 'Current Address',
     permAdress : 'Permanent Address'
 },
-    FormLabels : {
+FormLabels : {
     MainHeader : 'Forms',
     tileLabel : "Practice Form",
     PracticeFormName : 'Name',
@@ -51,6 +51,14 @@ textBoxPlaceholders : {
     PracticeFormCurAddress : 'Current Address',
     PracticeFormState : 'State and City'
 },
+FormsPlaceholders : {
+    FirstName : 'First Name',
+    LastName : 'Last Name',
+    Email : 'name@example.com',
+    Mobile : 'Mobile Number',
+    CurAddress : 'Current Address'
+},
+
 checkbox : 'Check Box'
 
 }

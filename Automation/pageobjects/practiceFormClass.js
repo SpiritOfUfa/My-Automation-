@@ -17,8 +17,29 @@ class practiceForm {
   get labelName() {
     return $("label#userName-label").getText();
   }
+  get firstName(){
+    // return $('input#firstName')
+    return $("#firstName")
+    // return $("#userName-wrapper > div:nth-child(2)");
+  }
+  get firstNamePlaceholder(){
+    return this.firstName.getAttribute("placeholder");
+  }
+  get lastName(){
+    return $("#lastName");
+  }
+  get lastNamePlaceholder(){
+    return this.lastName.getAttribute("placeholder");
+    
+  }
   get labelEmail() {
     return $("label#userEmail-label").getText();
+  }
+  get email(){
+    return $("#userEmail");
+  }
+  get emailPlaceholder(){
+    return this.email.getAttribute("placeholder")
   }
   get labelGender() {
     return $("#genterWrapper > div.col-md-3.col-sm-12").getText();
@@ -37,6 +58,12 @@ class practiceForm {
   }
   get labelMobile() {
     return $("#userNumber-label").getText();
+  }
+  get mobile(){
+    return $("#userNumber");
+  }
+  get mobilePlaceholder(){
+     return this.mobile.getAttribute("placeholder")
   }
   get labelDateOfBirth() {
     return $("#dateOfBirth-label").getText();
@@ -68,8 +95,21 @@ class practiceForm {
   get labelCurrentAddress() {
     return $("#currentAddress-label").getText();
   }
+  get currentAddress(){
+    return $("textarea#currentAddress");
+  }
+  get currentAddressPlaceholder(){
+    return this.currentAddress.getAttribute("placeholder")
+  }
   get labelStateCity() {
     return $("#stateCity-label").getText();
+  }
+  fillPracticeForm(obj) {
+    this.firstName.setValue(obj.firstName);
+    this.lastName.setValue(obj.lastName);
+    this.inputEmail.setValue(obj.email);
+    this.mobile.setValue(obj.mobileNumber);
+    this.currentAddress.setValue(obj.currentAddress); //setValue() - позволяет устанавливать значения
   }
 }
 export default new practiceForm();

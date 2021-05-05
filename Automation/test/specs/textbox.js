@@ -1,6 +1,6 @@
 const expect = require("chai").expect; // expect переменная которая хранит свойство .expect библиотеки 'chai'/ можно менять название
 import { URLs, labels } from "../../expected";
-import TextBox from "../../pageobjects/textbox";
+import TextBox from "../../pageobjects/textboxClass";
 import { inputTextBox } from "../../input";
 describe("Validate Elements section", () => {
   it("Navigate to elements page and check the header text", () => {
@@ -22,7 +22,7 @@ describe("Validate Elements section", () => {
     );
     expect(TextBox.labelPermAddress).to.equal(labels.textBoxLabels.permAdress);
   });
-  it("Validate laceholders texts inputs", () => {
+  it("Validate placeholders texts inputs", () => {
     expect(TextBox.inputFullNamePlaceHolder).to.equal(
       labels.textBoxPlaceholders.fullName
     );
