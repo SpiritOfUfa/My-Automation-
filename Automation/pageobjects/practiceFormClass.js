@@ -67,6 +67,9 @@ class practiceForm {
   get labelDateOfBirth() {
     return $("#dateOfBirth-label").getText();
   }
+  get inputDate(){
+    return $('#dateOfBirthInput')
+  }
   get labelSubjects() {
     return $("#subjects-label").getText();
   }
@@ -104,11 +107,16 @@ class practiceForm {
     return $("#stateCity-label").getText();
   }
   get ddState(){
-    return $("#state > div")
+    return $("#state > div > div:nth-of-type(1) ");
   }
   get ddStateList(){
-    return $$("#state > div:nth-of-type(2) > div")
-
+    return $$("#state > div:nth-of-type(2) > div > div")
+  }
+  get ddCity(){
+    return $("#city > div > div:nth-of-type(1) ")
+  }
+  get ddCityList(){
+    return $$("#city > div:nth-of-type(2) > div > div")
   }
   fillPracticeForm(FormData) {
     this.firstName.setValue(FormData.FirstName);
@@ -116,11 +124,12 @@ class practiceForm {
     this.email.setValue(FormData.Email);
     this.mobile.setValue(FormData.MobileNumber); //от 20 до 50 
     this.currentAddress.setValue(FormData.CurrentAddress);
-  //   this.firstName.setValue(obj.firstName);
-  //   this.lastName.setValue(obj.lastName);
-  //   this.inputEmail.setValue(obj.email);
-  //   this.mobile.setValue(obj.mobileNumber);
-  //   this.currentAddress.setValue(obj.currentAddress); //setValue() - позволяет устанавливать значения
+  
+  }
+  States = {
+    NCR : { 
+
+    }
   }
 }
 export default new practiceForm();

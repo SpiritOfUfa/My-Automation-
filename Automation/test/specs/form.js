@@ -1,10 +1,12 @@
 const expect = require("chai").expect;
 import { URLs, labels } from "../../expected";
 import practiceForm from "../../pageobjects/practiceFormClass";
-import {FormData} from "../../input";
+import { FormData } from "../../input";
+import practiceFormClass from "../../pageobjects/practiceFormClass";
 
 describe("Forms page test suit", () => {
   it("Validate the title on the Forms page", () => {
+    browser.maximizeWindow();
     browser.url(URLs.mainPage);
     practiceForm.formTileOnTheMainPage.click();
     expect(practiceForm.labelTitle).to.equal(labels.Forms);
@@ -77,16 +79,60 @@ describe("Forms page test suit", () => {
     ]);
   });
   it("Validate placeholders texts inputs", () => {
-      expect(practiceForm.firstNamePlaceholder).to.equal(labels.FormsPlaceholders.FirstName);
-      expect(practiceForm.lastNamePlaceholder).to.equal(labels.FormsPlaceholders.LastName);
-      expect(practiceForm.emailPlaceholder).to.equal(labels.FormsPlaceholders.Email);
-      expect(practiceForm.mobilePlaceholder).to.equal(labels.FormsPlaceholders.Mobile);
-      expect(practiceForm.currentAddressPlaceholder).to.equal(labels.FormsPlaceholders.CurAddress);
-
+    expect(practiceForm.firstNamePlaceholder).to.equal(
+      labels.FormsPlaceholders.FirstName
+    );
+    expect(practiceForm.lastNamePlaceholder).to.equal(
+      labels.FormsPlaceholders.LastName
+    );
+    expect(practiceForm.emailPlaceholder).to.equal(
+      labels.FormsPlaceholders.Email
+    );
+    expect(practiceForm.mobilePlaceholder).to.equal(
+      labels.FormsPlaceholders.Mobile
+    );
+    expect(practiceForm.currentAddressPlaceholder).to.equal(
+      labels.FormsPlaceholders.CurAddress
+    );
   });
-  it('Fill the practice form', () => {
-      practiceForm.fillPracticeForm(FormData);
-      browser.pause(5000);
+  it("Fill the practice form", () => {
+    practiceForm.fillPracticeForm(FormData);
+    browser.pause(500);
+  });
+  it("Make a selection in STATE Drop Down", () => {
+    // browser.url(URLs.practiceForm);
+    if (practiceForm.ddState.isDisplayedInViewport())
+      practiceForm.ddState.scrollIntoView(); //если ddState не видно, то проскролить до его появления
+    practiceForm.ddState.click();
+    practiceForm.ddStateList[0].waitForExist({ timeout: 500 });
+    const stateList = practiceForm.ddStateList.map((el) => el.getText());
+    const state = "Haryana";
+    const index = stateList.indexOf(state); // в массиве stateList ищем индекс константы state
+    practiceForm.ddStateList[index].click();
+    browser.pause(500);
+  });
+  it("Get the list of Cities per states", () => {
+    let obj = {};
+    practiceForm.ddState.click();
+    practiceForm.ddStateList[0].waitForExist({ timeout: 2000 });
+    for (let i = 0; i < practiceForm.ddStateList.length; i++) {
+      const state = practiceForm.ddStateList[i].getText(); //вытаскиваем значение штата с индексом [i] (NCR)
+      practiceForm.ddStateList[i].click(); //кликаем на этом штате
+      practiceForm.ddCity.click(); //кликаем на список городов
+      practiceForm.ddCityList[0].waitForExist({ timeout: 2000 }); //ждем пока он появится
+      const cityList = practiceForm.ddCityList.map((el) => el.getText()); //вытаскиваем список городов из массива ddCityList ([ 'Delhi', 'Gurgaon', 'Noida' ])
+      obj[state] = [...cityList]; // наш obj под ключом state записываем туда массив (NCR: [ 'Delhi', 'Gurgaon', 'Noida' ],)
+      practiceForm.ddState.click(); //кликаем по ddState, чтобы начать цикл заново (i = 1) и т.д 
+    }
+    console.log(obj);
+  });
+  it('Set Date', () => {
+    practiceForm.inputDate.click();
+    browser.keys(['Meta', 'a']);
+    browser.keys('Space')
+    practiceForm.inputDate.setValue('23 April 2020');
+    browser.keys('Enter');
+    browser.pause(5000);
 
   });
 });
