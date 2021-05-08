@@ -39,5 +39,15 @@ get allFields(){
 get buttonSubmit(){
     return $('#submit');
 }
+fillWebTable(WebTableData){
+    this.firstName.setValue(WebTableData.firstName);
+    this.lastName.setValue(WebTableData.lastName);
+    this.email.setValue(WebTableData.userEmail);
+    this.age.setValue(WebTableData.age); //от 20 до 50 
+    this.salary.setValue(WebTableData.salary);
+    this.department.setValue(WebTableData.department);
+    this.buttonSubmit.click() 
+    this.registrationForm.waitForExist({ timeout: 5000, reverse : true});
+}
 }
 export default new WebTable();

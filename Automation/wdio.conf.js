@@ -29,10 +29,12 @@ exports.config = {
     // Patterns to exclude.
     exclude: [
         './test/specs/**/MainPage.js',
-        './test/specs/**/form.js',
+        // './test/specs/**/form.js',
         './test/specs/**/textbox.js',
         './test/specs/**/checkBox.js',
         './test/specs/**/radioButton.js',
+        './test/specs/**/webTable.js',
+
 
         // './test/specs/**/form.js',
 

@@ -19,8 +19,7 @@ class practiceForm {
   }
   get firstName(){
     // return $('input#firstName')
-    return $("#firstName")
-    // return $("#userName-wrapper > div:nth-child(2)");
+    return $("input#firstName")
   }
   get firstNamePlaceholder(){
     return this.firstName.getAttribute("placeholder");
@@ -104,12 +103,24 @@ class practiceForm {
   get labelStateCity() {
     return $("#stateCity-label").getText();
   }
-  fillPracticeForm(obj) {
-    this.firstName.setValue(obj.firstName);
-    this.lastName.setValue(obj.lastName);
-    this.inputEmail.setValue(obj.email);
-    this.mobile.setValue(obj.mobileNumber);
-    this.currentAddress.setValue(obj.currentAddress); //setValue() - позволяет устанавливать значения
+  get ddState(){
+    return $("#state > div")
+  }
+  get ddStateList(){
+    return $$("#state > div:nth-of-type(2) > div")
+
+  }
+  fillPracticeForm(FormData) {
+    this.firstName.setValue(FormData.FirstName);
+    this.lastName.setValue(FormData.LastName);
+    this.email.setValue(FormData.Email);
+    this.mobile.setValue(FormData.MobileNumber); //от 20 до 50 
+    this.currentAddress.setValue(FormData.CurrentAddress);
+  //   this.firstName.setValue(obj.firstName);
+  //   this.lastName.setValue(obj.lastName);
+  //   this.inputEmail.setValue(obj.email);
+  //   this.mobile.setValue(obj.mobileNumber);
+  //   this.currentAddress.setValue(obj.currentAddress); //setValue() - позволяет устанавливать значения
   }
 }
 export default new practiceForm();

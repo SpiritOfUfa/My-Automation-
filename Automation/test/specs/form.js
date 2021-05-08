@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 import { URLs, labels } from "../../expected";
 import practiceForm from "../../pageobjects/practiceFormClass";
-import InputPracticeForm from "../../input";
+import {FormData} from "../../input";
 
 describe("Forms page test suit", () => {
   it("Validate the title on the Forms page", () => {
@@ -77,7 +77,7 @@ describe("Forms page test suit", () => {
     ]);
   });
   it("Validate placeholders texts inputs", () => {
-    //   expect(practiceForm.firstNamePlaceholder).to.equal(labels.FormsPlaceholders.FirstName);
+      expect(practiceForm.firstNamePlaceholder).to.equal(labels.FormsPlaceholders.FirstName);
       expect(practiceForm.lastNamePlaceholder).to.equal(labels.FormsPlaceholders.LastName);
       expect(practiceForm.emailPlaceholder).to.equal(labels.FormsPlaceholders.Email);
       expect(practiceForm.mobilePlaceholder).to.equal(labels.FormsPlaceholders.Mobile);
@@ -85,7 +85,8 @@ describe("Forms page test suit", () => {
 
   });
   it('Fill the practice form', () => {
-      practiceForm.fillPracticeForm(InputPracticeForm)
+      practiceForm.fillPracticeForm(FormData);
+      browser.pause(5000);
 
   });
 });

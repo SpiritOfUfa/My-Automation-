@@ -1,7 +1,9 @@
 const expect = require("chai").expect;
 import WebTable from "../../pageobjects/webTableClass";
 import { URLs } from "../../expected";
+import { WebTableData } from "../../input";
 describe("Validate Table Section", () => {
+    const myData = WebTableData();
   it("Click on Add Button and check a new models window appears", () => {
     browser.url(URLs.webTable);
     if (WebTable.buttonAdd.isDisplayedInViewport())
@@ -16,14 +18,11 @@ describe("Validate Table Section", () => {
       expect(el.getProperty("required")).to.be.true;
     }
   });
-  it('Fill the form the text and click the submit button', () => {
-      WebTable.firstName.setValue('Dima');
-      WebTable.lastName.setValue('Kuznatsov');
-      WebTable.email.setValue('TwoyDed@yandex.ru');
-      WebTable.age.setValue('25');
-      WebTable.salary.setValue('25000');
-      WebTable.department.setValue('IT');
-      WebTable.buttonSubmit.click() 
-      WebTable.registrationForm.waitForExist({ timeout: 5000, reverse : true});
+  it("Fill the form the text and click the submit button", () => {
+    WebTable.fillWebTable(myData);
+    browser.pause(5000);
+    WebTable.buttonAdd.click();
+    WebTable.fillWebTable(WebTableData());
+    browser.pause(5000);
   });
 });
