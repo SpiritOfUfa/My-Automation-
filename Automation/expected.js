@@ -60,6 +60,7 @@ FormsPlaceholders : {
     CurAddress : 'Current Address'
 },
 
+
 checkbox : 'Check Box'
 
 }

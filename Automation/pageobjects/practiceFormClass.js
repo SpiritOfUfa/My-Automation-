@@ -126,10 +126,7 @@ class practiceForm {
     this.currentAddress.setValue(FormData.CurrentAddress);
   
   }
-  States = {
-    NCR : { 
+  
 
-    }
-  }
 }
 export default new practiceForm();

@@ -49,5 +49,18 @@ fillWebTable(WebTableData){
     this.buttonSubmit.click() 
     this.registrationForm.waitForExist({ timeout: 5000, reverse : true});
 }
+get tableBody(){
+    return $(".rt-tbody")
+}
+get tableRows(){
+    return $$(".rt-tr-group")
+}
+buttonDelete(a){
+return $(`#delete-record-${a}`)
+}
+buttonEdit(a){
+    return $(`#edit-record-${a}`)
+
+}
 }
 export default new WebTable();

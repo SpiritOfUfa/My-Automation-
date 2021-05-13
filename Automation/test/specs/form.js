@@ -135,4 +135,5 @@ describe("Forms page test suit", () => {
     browser.pause(5000);
 
   });
+  
 });
