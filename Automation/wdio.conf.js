@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/links.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -161,7 +161,7 @@ exports.config = {
         // Babel setup
         require: ['@babel/register'],
         ui: 'bdd',
-        timeout: 60000
+        timeout: 120000
     },
     //
     // =====
