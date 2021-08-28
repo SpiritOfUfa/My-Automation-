@@ -70,6 +70,9 @@ class practiceForm {
   get inputDate(){
     return $('#dateOfBirthInput')
   }
+  get subject(){
+    return $("#subjectsContainer");
+  }
   get labelSubjects() {
     return $("#subjects-label").getText();
   }
@@ -118,15 +121,19 @@ class practiceForm {
   get ddCityList(){
     return $$("#city > div:nth-of-type(2) > div > div")
   }
+  get submitButton(){
+    return $('#submit');
+  }
   fillPracticeForm(FormData) {
     this.firstName.setValue(FormData.FirstName);
     this.lastName.setValue(FormData.LastName);
     this.email.setValue(FormData.Email);
     this.mobile.setValue(FormData.MobileNumber); //от 20 до 50 
     this.currentAddress.setValue(FormData.CurrentAddress);
-  
   }
-  
+  get allTrElementsAfterSubmit(){
+    return $$('td').map(el => el.getText()); 
+  }
 
 }
 export default new practiceForm();

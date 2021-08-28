@@ -9,7 +9,7 @@ export const FormData = {
   FirstName: random.maleFirstName(),
   LastName: random.lastName(),
   Email: random.email("gmail.com"),
-  MobileNumber: random.mobile(),
+  MobileNumber: random.int(1111111111, 9999999999),
   CurrentAddress: "Suzhou SND Shishanlu station",
 };
 export function WebTableData() {

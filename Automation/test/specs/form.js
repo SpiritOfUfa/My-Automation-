@@ -132,8 +132,17 @@ describe("Forms page test suit", () => {
     browser.keys('Space')
     practiceForm.inputDate.setValue('23 April 2020');
     browser.keys('Enter');
-    browser.pause(5000);
-
+    
+  });
+  it('Click Submit Button and Validate the Result ', () => {
+    practiceForm.submitButton.click();
+    browser.pause(2000);
+    console.log(practiceForm.allTrElementsAfterSubmit);
+    expect(practiceForm.allTrElementsAfterSubmit[1]).to.equal(FormData.FirstName + ' ' + FormData.LastName)
+    expect(practiceForm.allTrElementsAfterSubmit[3]).to.equal(FormData.Email);
+    expect(practiceForm.allTrElementsAfterSubmit[5]).to.equal('Other');
+    expect(practiceForm.allTrElementsAfterSubmit[7]).to.equal(FormData.MobileNumber.toString());
+    expect(practiceForm.allTrElementsAfterSubmit[9]).to.equal('23 April,2020');
   });
   
 });

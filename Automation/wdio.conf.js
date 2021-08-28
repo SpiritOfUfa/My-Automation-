@@ -24,12 +24,12 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/links.js'
+        './test/specs/**/form.js'
     ],
     // Patterns to exclude.
     exclude: [
         './test/specs/**/MainPage.js',
-        './test/specs/**/form.js',
+        // './test/specs/**/form.js',
         './test/specs/**/textbox.js',
         './test/specs/**/checkBox.js',
         './test/specs/**/radioButton.js',
